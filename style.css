@@ -173,7 +173,7 @@ z-index: -1;
   flex-direction: column;
   justify-content: space-between ;
   z-index: var(--z-fixed);
-  transition: right .4;
+  transition: right .4s;
 }
 .nav-logo , .navList{
   padding-bottom: 1.25rem;
@@ -202,3 +202,38 @@ z-index: -1;
   font-size: 1.5rem;
   cursor: pointer;
 }
+.show-menu{
+    right: 0;
+}
+/* **************************** */
+ .bannerLink{
+    position: relative;
+    display: grid;
+    place-items: center;
+    color: var(--white-color);
+
+ }
+ .banner-img{
+    border-radius: 1rem;
+ }
+ .banner-shadow{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--shadow-bg);
+    border-radius: 1rem;
+
+ }
+ .banner-data{
+    position: absolute;
+    bottom: 1.5rem;
+    text-align: center;
+
+ }
+ .banner-title{
+    font-size: var(--big-font-size);
+
+ }
+ 
