@@ -116,8 +116,9 @@ z-index: -1;
     padding: 1rem 1.5rem; 
     z-index: var(--z-fixed);
 }
-.header__content, .header__actions, .header__search {
+.header__content, .header__actions, .header__search  {
   display: flex;
+
 }
 .header__content{
     justify-content: space-between;
