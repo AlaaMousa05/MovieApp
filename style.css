@@ -8,10 +8,10 @@
   --white-color: hsl(0, 0%, 100%);
   --white-color-light: hsl(0, 0%, 90%);
   --shadow-bg: linear-gradient(180deg,
-             hsla(0, 0%, 0%, 0) 60%,
-             hsla(0, 0%, 0%, .7) 78%);
+      hsla(0, 0%, 0%, 0) 60%,
+      hsla(0, 0%, 0%, .7) 78%);
 
-  
+
   --body-font: "Montserrat", sans-serif;
   --big-font-size: 1.5rem;
   --h1-font-size: 1.5rem;
@@ -20,7 +20,7 @@
   --normal-font-size: .938rem;
   --small-font-size: .813rem;
 
-  
+
   --font-regular: 400;
   --font-medium: 500;
   --font-semi-bold: 600;
@@ -85,85 +85,102 @@ img {
   margin-inline: 1.5rem;
   padding-block: 8.5rem 4rem;
 }
+
 /* bacground  */
-.bg__image , .bg__blur {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100vh;
-z-index: -1;
+.bg__image,
+.bg__blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
 
 }
-.bg__image{
-    object-fit: cover;
-    object-position: center
+
+.bg__image {
+  object-fit: cover;
+  object-position: center
 }
-.bg__blur{
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter:blur(16px) ;
+
+.bg__blur {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
+
 /* heder  */
 
-.header{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: transparent ;
-    display: grid;
-    row-gap: 1.5rem;
-    padding: 1rem 1.5rem; 
-    z-index: var(--z-fixed);
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+  display: grid;
+  row-gap: 1.5rem;
+  padding: 1rem 1.5rem;
+  z-index: var(--z-fixed);
 }
-.header__content, .header__actions, .header__search {
+
+.header__content,
+.header__actions,
+.header__search {
   display: flex;
 }
-.header__content{
-    justify-content: space-between;
-    align-items: center;
+
+.header__content {
+  justify-content: space-between;
+  align-items: center;
 
 }
-.header__actions{
-    column-gap:.75rem ;
-    align-items: center;
-    font-size: 1.25rem;
+
+.header__actions {
+  column-gap: .75rem;
+  align-items: center;
+  font-size: 1.25rem;
 
 }
-.header__actions,.header__menu{
-    cursor: pointer;
+
+.header__actions,
+.header__menu {
+  cursor: pointer;
 }
-.header__search{
-    align-items: center;
-    column-gap: .5rem;
-    background-color: hsla(0 , 0% , 100% , .15);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    padding-inline: 1rem;
-    border-radius: .75rem;
+
+.header__search {
+  align-items: center;
+  column-gap: .5rem;
+  background-color: hsla(0, 0%, 100%, .15);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding-inline: 1rem;
+  border-radius: .75rem;
 
 
 
 
 
 }
-.header__search i{
-    font-size: 1.25rem;
+
+.header__search i {
+  font-size: 1.25rem;
 }
-.header__input{
-    width: 100%;
-    padding-block: 1rem;
-    background-color: transparent;
-    color: var(--white-color);
+
+.header__input {
+  width: 100%;
+  padding-block: 1rem;
+  background-color: transparent;
+  color: var(--white-color);
 }
-.header__input::placeholder{
-    color: var(--white-color);
+
+.header__input::placeholder {
+  color: var(--white-color);
 }
-.nav{
+
+.nav {
   position: fixed;
   top: 0;
   right: -100%;
-  background-color: hsla(0 , 0% , 0% , .2);
+  background-color: hsla(0, 0%, 0%, .2);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   width: 285px;
@@ -171,69 +188,149 @@ z-index: -1;
   padding: 3rem 3.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between ;
+  justify-content: space-between;
   z-index: var(--z-fixed);
   transition: right .4s;
 }
-.nav-logo , .navList{
+
+.nav-logo,
+.navList {
   padding-bottom: 1.25rem;
   border-bottom: 1px solid var(--white-color-light);
 
 }
-.nav_menu , .navList{
-   display: grid;
-   row-gap: 2.5rem;
+
+.nav_menu,
+.navList {
+  display: grid;
+  row-gap: 2.5rem;
 }
-.navLink{
+
+.navLink {
   color: var(--white-color);
   display: inline-flex;
   align-items: center;
   column-gap: .75rem;
 }
-.navLink i{
+
+.navLink i {
   font-size: var(--normal-font-size);
   margin-bottom: .75rem;
 
 }
-.nav-close{
+
+.nav-close {
   position: absolute;
-  top:1rem;
+  top: 1rem;
   right: 1.5rem;
   font-size: 1.5rem;
   cursor: pointer;
 }
-.show-menu{
-    right: 0;
+
+.show-menu {
+  right: 0;
 }
+
 /* **************************** */
- .bannerLink{
-    position: relative;
-    display: grid;
-    place-items: center;
-    color: var(--white-color);
+.bannerLink {
+  position: relative;
+  display: grid;
+  place-items: center;
+  color: var(--white-color);
 
- }
- .banner-img{
-    border-radius: 1rem;
- }
- .banner-shadow{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--shadow-bg);
-    border-radius: 1rem;
+}
 
- }
- .banner-data{
-    position: absolute;
-    bottom: 1.5rem;
-    text-align: center;
+.banner-img {
+  border-radius: 1rem;
+}
 
- }
- .banner-title{
-    font-size: var(--big-font-size);
+.banner-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--shadow-bg);
+  border-radius: 1rem;
 
- }
- 
+}
+
+.banner-data {
+  position: absolute;
+  bottom: 1.5rem;
+  text-align: center;
+
+}
+
+.banner-title {
+  font-size: var(--big-font-size);
+
+}
+
+/* --------------- movies Container part -------------------- */
+#moviesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.content {
+  position: relative;
+  width: 300px;
+  background-color: #390B44;
+  border-radius: 10px;
+}
+
+.poster {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.bottomPart {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #390B44;
+  padding: 10px;
+  padding-bottom: 100px;
+  border-radius: 10px;
+}
+
+.title {
+  color: #fff;
+  font-size: 18px;
+  padding: 10px 8px;
+}
+
+.rate {
+  border-radius: 5px;
+  padding: 10px 8px;
+  color: rgb(238, 215, 5);
+  background-color: #390B44;
+}
+
+.overView {
+  background-color:#390B44;
+  color: #ffffff;
+  font-size: 15px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  padding: 35px;
+  border-radius: 5px;
+  transform: translateY(-20%) !important;
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+
+.content:hover .overView {
+  transform: translateY(0);
+  opacity: 1;
+}
