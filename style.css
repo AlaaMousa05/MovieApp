@@ -121,6 +121,10 @@ img {
   padding: 1rem 1.5rem;
   z-index: var(--z-fixed);
 }
+.header.scrolled {
+  background-color: #3f2950; 
+  padding: 0.5rem 1.5rem;  
+}
 
 
 .header__content,
