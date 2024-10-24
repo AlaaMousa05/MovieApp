@@ -121,14 +121,12 @@ img {
   padding: 1rem 1.5rem;
   z-index: var(--z-fixed);
 }
-<<<<<<< HEAD
-.header__content, .header__actions, .header__search  {
-=======
+
 
 .header__content,
 .header__actions,
 .header__search {
->>>>>>> af60758b88be6115eb64f3c4a6dc579c1301e5e6
+
   display: flex;
 
 }
