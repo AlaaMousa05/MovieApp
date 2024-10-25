@@ -322,6 +322,7 @@ img {
   background-color: #390B44;
 }
 
+<<<<<<< HEAD
 .overView {
   background-color: #390B44;
   color: #ffffff;
@@ -330,19 +331,19 @@ img {
   bottom: 0;
   left: 0;
   right: 0;
+=======
+>>>>>>> 67f8e25f46ad05deb46a33b74175de385356e8f8
 
-  padding: 35px;
-  border-radius: 5px;
-  transform: translateY(-20%) !important;
-  transition: all 0.5s ease;
-  opacity: 0;
-}
 
-.content:hover .overView {
+/* .content:hover .overView {
   transform: translateY(0);
   opacity: 1;
+<<<<<<< HEAD
 }
 
+=======
+} */
+>>>>>>> 67f8e25f46ad05deb46a33b74175de385356e8f8
 /* /*****************************************************************************************det html---------- */
 .detaiels {
   /* height: 1000px; */
@@ -406,4 +407,59 @@ img {
 
 .caption {
   max-width: 450px;
+}
+/* /************************ butn veiw detailes*/
+#moviesContainer{
+  position: relative;
+  
+}
+.viewDetails{
+  position: absolute;
+  bottom: 30px;
+  width: 120px;
+  height: 30px;
+  color: var(--white-color);
+  border-radius: 5px;
+  background: linear-gradient(to left , #ef54cd, rgb(221, 119, 255),#959aed);
+  transition-property:  background-color border-radius ;
+  transition-duration: 1s;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.viewDetails:hover{
+  background: #959aed;
+  border-radius: 20px;
+}
+.stron{
+  color: #af46ff;
+  margin-right: 10px;
+}
+
+@media only screen and (max-width: 700px) {
+  .right h1{
+    font-size: 20px;
+    
+  }
+  .deticon i{
+    margin-left: 10px;
+    font-size:15px;
+  }
+  .caption{
+    font-size:15px;
+    font-weight: 300;
+    
+  }
+  .st {
+   
+   font-size: smaller;
+  }
+  .det .left{
+    flex-basis: 43%;
+  }
+  .det .right{
+    flex-basis: 50%;
+    color: var(--white-color);
+   
+    
+  }
 }
