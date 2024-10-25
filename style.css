@@ -422,3 +422,31 @@ margin-bottom: 40px;
   color: #af46ff;
   margin-right: 10px;
 }
+@media screen and (min-width: 320px) {
+  .right h1{
+    font-size: 20px;
+    
+  }
+  .deticon i{
+    margin-left: 10px;
+    font-size:15px;
+  }
+  .caption{
+    font-size:15px;
+    font-weight: 300;
+    
+  }
+  .st {
+   
+   font-size: smaller;
+  }
+  .det .left{
+    flex-basis: 43%;
+  }
+  .det .right{
+    flex-basis: 50%;
+    color: var(--white-color);
+   
+    
+  }
+}
