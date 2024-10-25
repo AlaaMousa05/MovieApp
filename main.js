@@ -98,6 +98,8 @@ function displayMovies(film) {
       rate.textContent = film[i].vote_average;
       rate.classList.add(`rate`);
       bottomPart.appendChild(rate);
+
+      
 // Create "View Details" Button
 const viewDetailsBtn = document.createElement(`button`);
 viewDetailsBtn.textContent = "View Details";

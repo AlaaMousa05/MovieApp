@@ -321,21 +321,7 @@ img {
   background-color: #390B44;
 }
 
-.overView {
-  background-color:#390B44;
-  color: #ffffff;
-  font-size: 15px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
 
-  padding: 35px;
-  border-radius: 5px;
-  transform: translateY(-20%) !important;
-  transition: all 0.5s ease;
-  opacity: 0;
-}
 
 /* .content:hover .overView {
   transform: translateY(0);
@@ -422,7 +408,8 @@ margin-bottom: 40px;
   color: #af46ff;
   margin-right: 10px;
 }
-@media screen and (min-width: 320px) {
+
+@media only screen and (max-width: 700px) {
   .right h1{
     font-size: 20px;
     
