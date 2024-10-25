@@ -18,14 +18,14 @@ if (navClose) {
    });
 }
 // scroll page
-window.addEventListener("scroll", function() {
+window.addEventListener("scroll", function () {
    var header = document.querySelector(".header");
    if (window.scrollY > 50) {
-     header.classList.add("scrolled");
+      header.classList.add("scrolled");
    } else {
-     header.classList.remove("scrolled");
+      header.classList.remove("scrolled");
    }
- });
+});
 /* --------------- movies Container part -------------------- */
 
 fetchData();
@@ -38,6 +38,7 @@ document.querySelector(`.search`).addEventListener(`keypress`, function (e) {
       } else {
          fetchData();
       }
+      e.target.value = "";
    }
 });
 async function fetchData() {
@@ -99,15 +100,15 @@ function displayMovies(film) {
       rate.classList.add(`rate`);
       bottomPart.appendChild(rate);
 
-      
-// Create "View Details" Button
-const viewDetailsBtn = document.createElement(`button`);
-viewDetailsBtn.textContent = "View Details";
-viewDetailsBtn.classList.add("viewDetails");
-viewDetailsBtn.addEventListener("click", () => {
-   window.location.href = `detiels.html?movieId=${film[i].id}`;
-});
-bottomPart.appendChild(viewDetailsBtn);
+
+      // Create "View Details" Button
+      const viewDetailsBtn = document.createElement(`button`);
+      viewDetailsBtn.textContent = "View Details";
+      viewDetailsBtn.classList.add("viewDetails");
+      viewDetailsBtn.addEventListener("click", () => {
+         window.location.href = `detiels.html?movieId=${film[i].id}`;
+      });
+      bottomPart.appendChild(viewDetailsBtn);
       container.appendChild(content);
    }
 }
