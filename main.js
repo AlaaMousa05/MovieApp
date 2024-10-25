@@ -84,18 +84,6 @@ function displayMovies(film) {
       image.classList.add(`poster`);
       content.appendChild(image);
 
-      const overView = document.createElement(`p`);
-      const str = document.createElement(`strong`);
-      str.textContent = "overview";
-      overView.classList.add("overView");
-      overView.appendChild(str);
-      const line = document.createElement(`br`);
-      overView.appendChild(line);
-      const lineTwo = document.createElement(`br`);
-      overView.appendChild(lineTwo);
-
-      overView.append(film[i].overview);
-      content.appendChild(overView);
 
       const bottomPart = document.createElement(`div`);
       bottomPart.classList.add(`bottomPart`);
@@ -110,7 +98,14 @@ function displayMovies(film) {
       rate.textContent = film[i].vote_average;
       rate.classList.add(`rate`);
       bottomPart.appendChild(rate);
-
+// Create "View Details" Button
+const viewDetailsBtn = document.createElement(`button`);
+viewDetailsBtn.textContent = "View Details";
+viewDetailsBtn.classList.add("viewDetails");
+viewDetailsBtn.addEventListener("click", () => {
+   window.location.href = `detiels.html?movieId=${film[i].id}`;
+});
+bottomPart.appendChild(viewDetailsBtn);
       container.appendChild(content);
    }
 }

@@ -337,10 +337,10 @@ img {
   opacity: 0;
 }
 
-.content:hover .overView {
+/* .content:hover .overView {
   transform: translateY(0);
   opacity: 1;
-}
+} */
 /* /*****************************************************************************************det html---------- */
 .detaiels{
   /* height: 1000px; */
@@ -395,4 +395,30 @@ margin-bottom: 40px;
 }
 .caption{
   max-width: 450px;
+}
+/* /************************ butn veiw detailes*/
+#moviesContainer{
+  position: relative;
+  
+}
+.viewDetails{
+  position: absolute;
+  bottom: 30px;
+  width: 120px;
+  height: 30px;
+  color: var(--white-color);
+  border-radius: 5px;
+  background: linear-gradient(to left , #ef54cd, rgb(221, 119, 255),#959aed);
+  transition-property:  background-color border-radius ;
+  transition-duration: 1s;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.viewDetails:hover{
+  background: #959aed;
+  border-radius: 20px;
+}
+.stron{
+  color: #af46ff;
+  margin-right: 10px;
 }
