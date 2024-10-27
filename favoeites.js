@@ -54,7 +54,7 @@ async function fetchData() {
       const data = await response.json();
       displayMovies(data.results);
    } catch (error) {
-      console.error(error);
+      console.log(error);
    }
 }
 
@@ -79,6 +79,8 @@ function displayMovies(film) {
    container.innerHTML = "";
 
    for (let i = 0; i < film.length; i++) {
+    console.log(classList);
+    if(heartIcon.classList.contains("class1")){
       const content = document.createElement(`div`);
       content.classList.add(`content`);
 
@@ -110,14 +112,14 @@ function displayMovies(film) {
         this.classList.toggle("ri-heart-fill"); 
         this.classList.toggle("ri-heart-line"); 
         if (this.classList.contains("ri-heart-fill")) {
-         this.classList.add("class1"); 
+         this.classList.add("class1"); // أضف الكلاس عند الإضافة إلى المفضلة
      } else {
-         this.classList.remove("class1"); 
+         this.classList.remove("class1"); // احذف الكلاس عند الإزالة من المفضلة
      }
    
      });
      bottomPart.appendChild(heartIcon);  
-   
+   // إضافة أيقونة القلب لإضافة إلى المفضلات
 // const heartIcon = document.createElement("span");
 // heartIcon.classList.add("heart-icon", "ri-heart-line");
 // heartIcon.dataset.movieId = film[i].id;
@@ -145,5 +147,6 @@ function displayMovies(film) {
       bottomPart.appendChild(viewDetailsBtn);
       container.appendChild(content);
    }
+}
 }
 
