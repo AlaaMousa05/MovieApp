@@ -454,3 +454,32 @@ img {
 
   }
 }
+
+.ri-heart-line {
+  font-size: 1.2rem;
+  color: #d1c5c4; /* Default color for unfilled heart */
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.ri-heart-line:hover {
+  color: #c0392b; /* Color on hover for unfilled heart */
+}
+
+.ri-heart-fill {
+  color: #ff4757; /* Color when filled */
+}
+#favoritesList .content {
+  margin: 10px;
+  padding: 15px;
+  background-color: #3f2950;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#favoritesList .poster {
+  width: 150px;
+  height: 225px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
