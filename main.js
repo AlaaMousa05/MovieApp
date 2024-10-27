@@ -78,6 +78,8 @@ function displayMovies(film) {
    const container = document.getElementById(`moviesContainer`);
    container.innerHTML = "";
 
+   const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
    for (let i = 0; i < film.length; i++) {
       const content = document.createElement(`div`);
       content.classList.add(`content`);
@@ -105,35 +107,33 @@ function displayMovies(film) {
      // Add heart icon for adding to favorites
      const heartIcon = document.createElement("span");
      heartIcon.classList.add("heart-icon", "ri-heart-line");
-     heartIcon.dataset.movieId = film[i].id; 
-     heartIcon.addEventListener("click", function () {
-        this.classList.toggle("ri-heart-fill"); 
-        this.classList.toggle("ri-heart-line"); 
-        if (this.classList.contains("ri-heart-fill")) {
-         this.classList.add("class1"); 
-     } else {
-         this.classList.remove("class1"); 
+     heartIcon.dataset.movieId = film[i].id;
+
+     if (favorites.includes(film[i].id)) {
+        heartIcon.classList.add("ri-heart-fill");
+        heartIcon.classList.remove("ri-heart-line");
      }
-   
+
+     heartIcon.addEventListener("click", function () {
+        this.classList.toggle("ri-heart-fill");
+        this.classList.toggle("ri-heart-line");
+
+        const movieId = parseInt(this.dataset.movieId);
+        let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
+        if (this.classList.contains("ri-heart-fill")) {
+           favorites.push(movieId);
+        } else {
+           favorites = favorites.filter(id => id !== movieId);
+        }
+
+        localStorage.setItem('favorites', JSON.stringify(favorites));
      });
-     bottomPart.appendChild(heartIcon);  
-   
+
+     bottomPart.appendChild(heartIcon);
 // const heartIcon = document.createElement("span");
 // heartIcon.classList.add("heart-icon", "ri-heart-line");
 // heartIcon.dataset.movieId = film[i].id;
-
-// heartIcon.addEventListener("click", function () {
-//     this.classList.toggle("ri-heart-fill"); 
-//     this.classList.toggle("ri-heart-line");
-
-//     // إضافة أو إزالة الكلاس 'class1' بناءً على حالة الأيقونة
-//     if (this.classList.contains("ri-heart-fill")) {
-//         this.classList.add("class1"); // أضف الكلاس عند الإضافة إلى المفضلة
-//     } else {
-//         this.classList.remove("class1"); // احذف الكلاس عند الإزالة من المفضلة
-//     }
-// });
-   
 
       // Create "View Details" Button
       const viewDetailsBtn = document.createElement(`button`);
