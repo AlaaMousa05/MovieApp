@@ -26,6 +26,8 @@ window.addEventListener("scroll", function () {
       header.classList.remove("scrolled");
    }
 });
+
+
 /* --------------- movies Container part -------------------- */
 
 fetchData();
@@ -76,6 +78,8 @@ function displayMovies(film) {
    const container = document.getElementById(`moviesContainer`);
    container.innerHTML = "";
 
+   const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
    for (let i = 0; i < film.length; i++) {
       const content = document.createElement(`div`);
       content.classList.add(`content`);
@@ -100,6 +104,36 @@ function displayMovies(film) {
       rate.classList.add(`rate`);
       bottomPart.appendChild(rate);
 
+     // Add heart icon for adding to favorites
+     const heartIcon = document.createElement("span");
+     heartIcon.classList.add("heart-icon", "ri-heart-line");
+     heartIcon.dataset.movieId = film[i].id;
+
+     if (favorites.includes(film[i].id)) {
+        heartIcon.classList.add("ri-heart-fill");
+        heartIcon.classList.remove("ri-heart-line");
+     }
+
+     heartIcon.addEventListener("click", function () {
+        this.classList.toggle("ri-heart-fill");
+        this.classList.toggle("ri-heart-line");
+
+        const movieId = parseInt(this.dataset.movieId);
+        let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
+        if (this.classList.contains("ri-heart-fill")) {
+           favorites.push(movieId);
+        } else {
+           favorites = favorites.filter(id => id !== movieId);
+        }
+
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+     });
+
+     bottomPart.appendChild(heartIcon);
+// const heartIcon = document.createElement("span");
+// heartIcon.classList.add("heart-icon", "ri-heart-line");
+// heartIcon.dataset.movieId = film[i].id;
 
       // Create "View Details" Button
       const viewDetailsBtn = document.createElement(`button`);
@@ -112,3 +146,4 @@ function displayMovies(film) {
       container.appendChild(content);
    }
 }
+
