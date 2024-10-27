@@ -37,10 +37,7 @@ document.querySelector(`.search`).addEventListener(`keypress`, function (e) {
       const index = e.target.value.trim();
       if (index) {
          fetchSearch(index);
-      } else {
-         fetchData();
       }
-      e.target.value = "";
    }
 });
 async function fetchData() {
@@ -104,36 +101,36 @@ function displayMovies(film) {
       rate.classList.add(`rate`);
       bottomPart.appendChild(rate);
 
-     // Add heart icon for adding to favorites
-     const heartIcon = document.createElement("span");
-     heartIcon.classList.add("heart-icon", "ri-heart-line");
-     heartIcon.dataset.movieId = film[i].id;
+      // Add heart icon for adding to favorites
+      const heartIcon = document.createElement("span");
+      heartIcon.classList.add("heart-icon", "ri-heart-line");
+      heartIcon.dataset.movieId = film[i].id;
 
-     if (favorites.includes(film[i].id)) {
-        heartIcon.classList.add("ri-heart-fill");
-        heartIcon.classList.remove("ri-heart-line");
-     }
+      if (favorites.includes(film[i].id)) {
+         heartIcon.classList.add("ri-heart-fill");
+         heartIcon.classList.remove("ri-heart-line");
+      }
 
-     heartIcon.addEventListener("click", function () {
-        this.classList.toggle("ri-heart-fill");
-        this.classList.toggle("ri-heart-line");
+      heartIcon.addEventListener("click", function () {
+         this.classList.toggle("ri-heart-fill");
+         this.classList.toggle("ri-heart-line");
 
-        const movieId = parseInt(this.dataset.movieId);
-        let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+         const movieId = parseInt(this.dataset.movieId);
+         let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
-        if (this.classList.contains("ri-heart-fill")) {
-           favorites.push(movieId);
-        } else {
-           favorites = favorites.filter(id => id !== movieId);
-        }
+         if (this.classList.contains("ri-heart-fill")) {
+            favorites.push(movieId);
+         } else {
+            favorites = favorites.filter(id => id !== movieId);
+         }
 
-        localStorage.setItem('favorites', JSON.stringify(favorites));
-     });
+         localStorage.setItem('favorites', JSON.stringify(favorites));
+      });
 
-     bottomPart.appendChild(heartIcon);
-// const heartIcon = document.createElement("span");
-// heartIcon.classList.add("heart-icon", "ri-heart-line");
-// heartIcon.dataset.movieId = film[i].id;
+      bottomPart.appendChild(heartIcon);
+      // const heartIcon = document.createElement("span");
+      // heartIcon.classList.add("heart-icon", "ri-heart-line");
+      // heartIcon.dataset.movieId = film[i].id;
 
       // Create "View Details" Button
       const viewDetailsBtn = document.createElement(`button`);
