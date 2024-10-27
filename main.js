@@ -71,6 +71,8 @@ async function fetchSearch(index) {
       console.error(error);
    }
 }
+
+
 function displayMovies(film) {
    const container = document.getElementById(`moviesContainer`);
    container.innerHTML = "";

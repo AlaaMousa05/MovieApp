@@ -408,6 +408,7 @@ img {
   transition-property: background-color border-radius;
   transition-duration: 1s;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  cursor: pointer;
 
 }
 
