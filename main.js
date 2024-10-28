@@ -84,7 +84,10 @@ function displayMovies(film) {
       content.classList.add(`content`);
 
       const image = document.createElement(`img`);
-      image.src = `https://image.tmdb.org/t/p/w1280` + film[i].poster_path;
+      image.src = film[i].poster_path 
+         ? `https://image.tmdb.org/t/p/w1280${film[i].poster_path}`
+         : `https://dummyimage.com/300x450/ddd/555.png&text=No+Image`; // default image
+         
       image.classList.add(`poster`);
       content.appendChild(image);
 
